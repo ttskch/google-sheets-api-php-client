@@ -1,11 +1,12 @@
 {
-    "name": "ttskch/google-sheets-api",
-    "description": "",
+    "name": "ttskch/google-sheets-api-php-client",
+    "description": "PHP client library for Google Sheets API.",
     "keywords": [
-        "Skeleton",
-        "PSR"
+        "Spreadsheets",
+        "API",
+        "REST"
     ],
-    "homepage": "https://github.com/koriym/Koriym.PhpSkeleton",
+    "homepage": "https://github.com/ttskch/google-sheets-api-php-client",
     "license": "MIT",
     "authors": [
         {
