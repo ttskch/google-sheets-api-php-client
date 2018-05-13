@@ -1,5 +1,8 @@
 # google-sheets-api-php-client
 
+[![Latest Stable Version](https://poser.pugx.org/ttskch/google-sheets-api-php-client/v/stable)](https://packagist.org/packages/ttskch/google-sheets-api-php-client)
+[![Total Downloads](https://poser.pugx.org/ttskch/google-sheets-api-php-client/downloads)](https://packagist.org/packages/ttskch/google-sheets-api-php-client)
+
 PHP client library for Google Sheets API.
 
 ## Requirements
@@ -31,7 +34,7 @@ if (isset($_GET['code'])) {
     $authenticator->authorize();
 }
 
-// create API client with authorized Google_Client.
+// create API client with authorized \Google_Client.
 $api = \Ttskch\GoogleSheetsApi\Factory\ApiClientFactory::create($googleClient);
 
 $service = $api->getGoogleService();
