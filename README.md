@@ -23,7 +23,7 @@ $ composer require ttskch/google-sheets-api-php-client:@dev
 
 ```php
 // create \Google_Client instance with your OAuth2 client ID.
-$googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::create(
+$googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::createOAuthClient(
     'client_id',
     'client_secret',
     'redirect_uri',
