@@ -24,7 +24,11 @@ class Authenticator
     {
         $this->googleClient->setAccessType('offline');  // for getting refresh token in authentication
         $this->googleClient->setApprovalPrompt($forceApprovalPrompt ? 'force' : 'auto');
-        $authUrl = $this->googleClient->createAuthUrl([\Google_Service_Sheets::SPREADSHEETS]);
+        $authUrl = $this->googleClient->createAuthUrl([
+            \Google_Service_Sheets::SPREADSHEETS,
+            \Google_Service_Oauth2::USERINFO_EMAIL,
+            \Google_Service_Oauth2::USERINFO_PROFILE,
+        ]);
 
         header(sprintf('Location: %s', filter_var($authUrl, FILTER_SANITIZE_URL)));
         exit;

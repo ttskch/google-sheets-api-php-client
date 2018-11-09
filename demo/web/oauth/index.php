@@ -18,7 +18,7 @@ if (isset($_SESSION['token'])) {
     $googleClient->setAccessToken($_SESSION['token']);
 } elseif (isset($_GET['code'])) {
     $_SESSION['token'] = $authenticator->authenticate($_GET['code']);
-    header('Location: /');
+    header('Location: /oauth');
     exit;
 } else {
     $authenticator->authorize();

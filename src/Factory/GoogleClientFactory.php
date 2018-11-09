@@ -36,7 +36,11 @@ class GoogleClientFactory
 
         $client = new \Google_Client();
         $client->setAuthConfig($credentialsFilePath);
-        $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
+        $client->setScopes([
+            \Google_Service_Sheets::SPREADSHEETS,
+            \Google_Service_Oauth2::USERINFO_EMAIL,
+            \Google_Service_Oauth2::USERINFO_PROFILE,
+        ]);
 
         return $client;
     }
