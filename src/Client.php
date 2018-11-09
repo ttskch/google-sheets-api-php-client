@@ -56,7 +56,7 @@ class Client
      */
     public function getGoogleService()
     {
-        if ($this->googleClient->isAccessTokenExpired()) {
+        if ($this->googleClient->getAccessToken() && $this->googleClient->isAccessTokenExpired()) {
             $this->refresh();
         }
 

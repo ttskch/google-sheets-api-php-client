@@ -1,11 +1,11 @@
 <?php
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 
-$parameters = require __DIR__ . '/../parameters.php';
+$parameters = require __DIR__ . '/../../parameters.php';
 
 session_start();
 
-$googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::create(
+$googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::createOAuthClient(
     $parameters['client_id'],
     $parameters['client_secret'],
     $parameters['redirect_uri'],

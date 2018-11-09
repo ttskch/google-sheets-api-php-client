@@ -17,6 +17,10 @@ $ composer require ttskch/google-sheets-api-php-client:@dev
 
 ## Usage
 
+### Initializing API client
+
+#### With OAuth2
+
 ```php
 // create \Google_Client instance with your OAuth2 client ID.
 $googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::create(
@@ -33,7 +37,18 @@ if (isset($_GET['code'])) {
 } else {
     $authenticator->authorize();
 }
+```
 
+#### With Service Account
+
+```php
+// create \Google_Client instance with your Service Account credentials json file.
+$googleClient = \Ttskch\GoogleSheetsApi\Factory\GoogleClientFactory::createServiceAccountClient('/path/to/service-account-credentials.json');
+```
+
+### Using API
+
+```php
 // create API client with authorized \Google_Client.
 $api = \Ttskch\GoogleSheetsApi\Factory\ApiClientFactory::create($googleClient);
 
